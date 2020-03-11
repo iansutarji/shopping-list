@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+    <head>Shopping List</head>
+    <body>
+        
+        
+       <table>
+           <tr>
+               <th>No</th>
+               <th>Name of items</th>
+               <th>Quantity</th>
+               <th>Price of 1 item</th>
+               <th>Total price</th>
+           </tr>
+           <tr>
+               <td class = "cell1" id = "0">1</td>
+               <td class = "cell" id = "NameOfItem">
+                <input type = "text" name = ""  id = "1"></input></td>
+               <td class = "cell" id = "Quantity">
+                <input type = "text" name = "" onkeyup = "multiply()" id = "2"></input></td>
+               <td class = "cell" id = "PriceOf1Item" >
+                <input type = "text" name = "" onkeyup = "multiply()" id = "3"></input></td>
+               <td class = "cell2" id = "4"> <div id = "result"></div></td>
+           </tr>
+           
+       </table>
+       
+       <style>
+           .cell1 {
+                width: 30px;
+                height: 20px;
+                background-color: lightblue;
+                text-align: center;
+           }
+
+           .cell2 {
+               text-align: center;
+               height: 20px;
+               background-color: lightgreen;
+               width: 100px;
+           }
+
+           head {
+               font-size: 70px;
+           }
+
+           .cell {
+               background-color: lightcoral;
+               height: 20px;
+               width: 100px;
+           }
+
+           input {
+               background-color: lightcoral;
+               text-align: center;
+               width: 100px;
+           }
+
+
+       </style>
+
+        <p><button class = "btn" data-bind = "click:addRows">+</button></p>
+
+       <script>
+           //multiply price of one item and the quantity
+           //the result will be inputted in the "Total Price" section
+           
+           function multiply() {
+               num1 = parseInt(document.getElementById("2").value);
+               num2 = parseInt(document.getElementById("3").value);
+               parseInt(document.getElementById("result").innerHTML = num1 * num2);
+           }
+
+           function addRows(){
+               var tbl = document.getElementbyId()
+               row = tbl.insertRow(tbl.rows.length),
+               i;
+
+               for (i = 0; i < tbl.rows[0].cells.length; i++) {
+                    createCell(row.insertCell(i), i, 'row');
+                }
+           }
+        
+           
+
+            
+       </script>
+    </body>
+
+
+</html>
+
